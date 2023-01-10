@@ -19,7 +19,6 @@ const conatainerStyle = {
 const boxStyle = {
   position: "absolute",
   top: "75px",
-  border: "1px solid black",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

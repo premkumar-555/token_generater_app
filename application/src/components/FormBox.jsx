@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Typography, TextField, Button } from "@mui/material/";
+import { Box, Typography, TextField, Button, Alert } from "@mui/material/";
 import { getContextValues } from "../contexts/FormContext";
 const boxStyles = {
   width: "55%",
@@ -23,6 +23,12 @@ export default function BasicTextFields() {
     let values = Object.values(formvalues);
     if (values.filter((ele) => !ele.length).length) {
       console.log("error");
+    }
+    if (
+      +formvalues?.blue_tokens_per_row > +formvalues?.no_of_blue_tokens ||
+      +formvalues?.red_tokens_per_row > +formvalues?.no_of_red_tokens
+    ) {
+      alert("tokens/row should not be greater than total number of tokens");
     } else {
       console.log(formvalues);
       let blueRows = Math.ceil(
