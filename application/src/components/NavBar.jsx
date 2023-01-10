@@ -13,7 +13,7 @@ responsiveFontSizes(theme);
 export default function ElevateAppBar(props) {
   return (
     <ThemeProvider theme={theme}>
-      <AppBar sx={{ paddingLeft: "1rem" }}>
+      <AppBar sx={{ paddingLeft: "1rem", position: "fixed" }}>
         <Toolbar>
           <Typography variant="h6">Token Generator</Typography>
         </Toolbar>
