@@ -8,7 +8,7 @@ import FormContext from "./contexts/FormContext";
 
 const conatainerStyle = {
   border: "1px solid blue",
-  height: "800px",
+  height: "auto",
   width: "100%",
   margin: "auto",
   padding: "0 2rem",
