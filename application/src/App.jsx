@@ -4,6 +4,7 @@ import ElevateAppBar from "./components/NavBar";
 import BasicTextFields from "./components/FormBox";
 import ResponsiveGrid from "./components/GriBox";
 import "./App.css";
+import FormContext from "./contexts/FormContext";
 
 const conatainerStyle = {
   border: "1px solid blue",
@@ -23,6 +24,7 @@ const boxStyle = {
   flexDirection: "column",
   alignItems: "center",
   width: "100%",
+  gap: "10px",
 };
 
 function App() {
@@ -31,8 +33,10 @@ function App() {
       <Box sx={conatainerStyle}>
         <ElevateAppBar />
         <Box sx={boxStyle}>
-          <BasicTextFields />
-          <ResponsiveGrid />
+          <FormContext>
+            <BasicTextFields />
+            <ResponsiveGrid />
+          </FormContext>
         </Box>
       </Box>
     </div>
