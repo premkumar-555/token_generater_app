@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import ElevateAppBar from "./components/NavBar";
 import BasicTextFields from "./components/FormBox";
-import ResponsiveGrid from "./components/GriBox";
+import FlexBox from "./components/FlexBox";
 import "./App.css";
 import FormContext from "./contexts/FormContext";
 
@@ -35,7 +35,7 @@ function App() {
         <Box sx={boxStyle}>
           <FormContext>
             <BasicTextFields />
-            <ResponsiveGrid />
+            <FlexBox />
           </FormContext>
         </Box>
       </Box>
