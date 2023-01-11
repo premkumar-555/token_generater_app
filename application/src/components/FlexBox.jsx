@@ -4,15 +4,16 @@ import Box from "@mui/material/Box";
 import { getContextValues } from "../contexts/FormContext";
 import { v4 as uuid } from "uuid";
 
+const containerWidth = { xs: "85%", sm: "60%", md: "50%", lg: "45%" };
 const containerStyle = {
-  width: "40%",
   margin: "auto",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
+  alignItems: "left",
+  // justifyContent: "flex-start",
   overflow: "scroll",
   padding: "0.5rem",
+  // paddingLeft: "4rem",
   borderRadius: "6px",
 };
 
@@ -21,17 +22,19 @@ const flexItemStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  width: "60px",
-  height: "60px",
   borderRadius: "6px",
 };
+const flexItemWidthHeight = { xs: "30px", sm: "40px", md: "45px", lg: "50px" };
 
 const flexBoxStyle = {
+  width: "100%",
   mb: "10px",
   display: "flex",
+  justifyContent: "flex-start",
   gap: "10px",
-  width: "100%",
+  ml: "5px",
 };
+const fontSizes = { xs: "12px", sm: "18px", md: "20px" };
 
 export default function FlexBox() {
   const { tokenData, settokenData } = getContextValues();
@@ -42,7 +45,7 @@ export default function FlexBox() {
   return (
     <>
       {blue && red && (
-        <Box sx={containerStyle}>
+        <Box sx={containerStyle} width={containerWidth}>
           {blue &&
             Array.from(Array(blue.rows)).map((_, index) => {
               return (
@@ -50,9 +53,11 @@ export default function FlexBox() {
                   {Array.from(Array(blue?.columns)).map((_, index) => {
                     if (count?.blue > 0) {
                       count = { ...count, blue: count.blue - 1 };
-                      console.log(count.blue);
                       return (
                         <Box
+                          width={flexItemWidthHeight}
+                          height={flexItemWidthHeight}
+                          fontSize={fontSizes}
                           sx={{
                             backgroundColor: `${blue?.color}`,
                             ...flexItemStyle,
@@ -75,9 +80,11 @@ export default function FlexBox() {
                   {Array.from(Array(red?.columns)).map((_, index) => {
                     if (count?.red > 0) {
                       count = { ...count, red: count.red - 1 };
-                      console.log(count.red);
                       return (
                         <Box
+                          width={flexItemWidthHeight}
+                          height={flexItemWidthHeight}
+                          fontSize={fontSizes}
                           key={uuid()}
                           sx={{
                             backgroundColor: `${red?.color}`,
