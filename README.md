@@ -10,7 +10,7 @@ Client: React Js, Material UI, context API, CSS, ES6+
 
 
 
-## Instructions to install and run on development server: 
+## Instructions to install and run app on development server: 
 
  1. Fork the repository.
 
