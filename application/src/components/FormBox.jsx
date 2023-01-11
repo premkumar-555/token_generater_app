@@ -61,6 +61,7 @@ export default function BasicTextFields() {
   const clear = () => {
     settokenData({});
     setformvalues({});
+    window.location.reload();
   };
   return (
     <Box
